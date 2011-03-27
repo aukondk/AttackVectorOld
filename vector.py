@@ -26,17 +26,24 @@ def login():
 	loginname = raw_input("username: ")
 	loginpass = raw_input("password: ")
 
-
-
 def prompt():
 	global loginname
 	command = raw_input(loginname + "@localhost:/# ")
 	if command == "exit":
 		print "End of Line"
 		exit()
+	elif command == "ls":
+		cmd_ls()
 	else:
 		print command + ": Command not found"
 	prompt() #shouldn't have this nested inside itself :p while loop?
+
+def cmd_ls():
+	print "This will display files in the current directory"
+
+
+
+
 
 login()
 print "Welcome. Enter \"exit\" to leave"
