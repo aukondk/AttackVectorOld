@@ -21,9 +21,17 @@
 #       MA 02110-1301, USA.
 
 import os
-os.system("clear")
-print "ATTACK VECTOR - Computer Security Simulation"
-print
+
+class fs_dir(object):
+	def __init__(self, name):
+	self.name = name
+	self.exists = True
+
+class fs_file(object):
+	def __init__(self, name):
+	self.name = name
+	self.exists = True
+	self.content = ""
 
 def login():
 	global loginname
@@ -34,11 +42,14 @@ def login():
 def prompt():
 	global loginname
 	command = raw_input(loginname + "@localhost:/# ")
+	
 	if command == "exit":
 		print "End of Line"
 		exit()
+	
 	elif command == "ls":
 		cmd_ls()
+	
 	else:
 		print command + ": Command not found"
 	prompt() #shouldn't have this nested inside itself :p while loop?
@@ -49,7 +60,10 @@ def cmd_ls():
 
 
 
-
+os.system("clear")
+print "ATTACK VECTOR - Computer Security Simulation"
+print
 login()
+print
 print "Welcome. Enter \"exit\" to leave"
 prompt()
