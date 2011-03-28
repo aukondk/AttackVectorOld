@@ -20,6 +20,11 @@
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
 
+import os
+os.system("clear")
+print "ATTACK VECTOR - Computer Security Simulation"
+print
+
 def login():
 	global loginname
 	print "NotUNIX v1.0"
