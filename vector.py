@@ -33,15 +33,25 @@ class fs_file(object):
 		self.exists = True
 		self.content = ""
 
+
+
+def cmd_help():
+	print "Recognised commands:"
+	print "ls - List contents of current directory"
+	print "exit - Leave Attack Vector"
+
 def login():
 	global loginname
+	global cur_dir
+	cur_dir = "/"
 	print "NotUNIX v1.0"
-	loginname = raw_input("username: ")
-	loginpass = raw_input("password: ")
+	loginname = raw_input("Username: ")
+	loginpass = raw_input("Password: ")
 
 def prompt():
 	global loginname
-	command = raw_input(loginname + "@localhost:/# ")
+	global cur_dir
+	command = raw_input(loginname + "@localhost:" + cur_dir + "# ")
 	
 	if command == "exit":
 		print "End of Line"
@@ -49,6 +59,9 @@ def prompt():
 	
 	elif command == "ls":
 		cmd_ls()
+	
+	elif command == "help":
+		cmd_help()
 	
 	else:
 		print command + ": Command not found"
@@ -65,5 +78,5 @@ print "ATTACK VECTOR - Computer Security Simulation"
 print
 login()
 print
-print "Welcome. Enter \"exit\" to leave"
+print "Welcome. Enter \"help\" for instructions"
 prompt()
