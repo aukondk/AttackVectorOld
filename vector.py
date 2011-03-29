@@ -24,14 +24,14 @@ import os
 
 class fs_dir(object):
 	def __init__(self, name):
-	self.name = name
-	self.exists = True
+		self.name = name
+		self.exists = True
 
 class fs_file(object):
 	def __init__(self, name):
-	self.name = name
-	self.exists = True
-	self.content = ""
+		self.name = name
+		self.exists = True
+		self.content = ""
 
 def login():
 	global loginname
